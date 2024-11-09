@@ -5,17 +5,17 @@ import IconTwitter from "../components/icons/twitter.astro";
 export const SOCIALS = [
   {
     name: "GitHub",
-    url: "https://github.com/thomasnascimento",
+    url: "https://github.com/devthmedu",
     icon: IconGithub,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/thomas-ed",
+    url: "https://www.linkedin.com/in/devthm/",
     icon: IconLinkedin,
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/thomas_ed_r",
+    url: "https://x.com/devthmedu",
     icon: IconTwitter,
   },
  
