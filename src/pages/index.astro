@@ -13,58 +13,73 @@ import { SKILLS } from "../data/skills";
   <div class="relative hero z-10">
     <div class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 animate-fadeIn">
       <div class="lg:flex lg:justify-between lg:gap-4">
-        <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 animate-slideInLeft">
-          <div class="flex lg:items-start gap-4 flex-col lg:flex-row items-center text-center lg:text-left">
-            <img src="/logo.png" alt="Thomas Eduardo R Nascimento" class="w-16 h-16 rounded-full shadow-lg hover:scale-105 transition-transform duration-300" />
-            <div>
-              <a href="/" class="text-4xl lg:text-5xl block font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 animate-gradient">
-                <h1>Thomas Eduardo R Nascimento</h1>
-              </a>
-              <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400 animate-fadeIn delay-200">Desenvolvedor Web</h2>
+   <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 animate-slideInLeft">
+  <!-- Perfil e Identificação -->
+  <div class="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-4">
+    <img src="/logo.png" alt="Foto de Thomas Eduardo R Nascimento" class="w-16 h-16 rounded-full shadow-lg hover:scale-105 transition-transform duration-300" />
 
-              <a
-                data-ccursor
-                href="mailto:developer.thomas@outlook.com.br"
-                class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4 hover:bg-green-400/20"
-              >
-                <span>Envie um e-mail</span>
-                <span class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-ping"></span>
-              </a>
-            </div>
-          </div>
+    <div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 animate-gradient">
+        Thomas Eduardo
+      </h1>
 
-          {SOCIALS.length && (
-            <ul class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5 animate-fadeIn delay-500" aria-label="Redes sociais">
-              {SOCIALS.map((social) => (
-                <li class="text-xs p-2 rounded hover:bg-white/5 transition duration-300 transform hover:-translate-y-1" data-ccursor>
-                  <a
-                    class="block hover:text-slate-200 transition duration-200"
-                    href={social.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={`${social.name} (abre em uma nova aba)`}
-                  >
-                    <span class="sr-only">{social.name}</span>
-                    {<Component component={social.icon} />}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </header>
+      <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400 animate-fadeIn delay-200">
+        Desenvolvedor Web
+      </h2>
+
+      <!-- Botão de contato -->
+    <a
+  href="https://wa.me/551999042072"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center gap-x-2 mt-4 px-3 py-2.5 text-sm font-semibold text-white rounded-md border border-neutral-700 border-opacity-50 backdrop-blur-xl bg-neutral-400/10 shadow group transition-all hover:bg-green-400/20 hover:border-opacity-0"
+>
+  <span>Fale comigo no WhatsApp</span>
+  <span class="w-2 h-2 rounded-full bg-green-400 animate-ping duration-1000"></span>
+</a>
+
+    </div>
+  </div>
+
+  <!-- Redes Sociais -->
+  {SOCIALS.length > 0 && (
+    <ul class="mt-8 flex justify-center lg:justify-start items-center gap-x-5 animate-fadeIn delay-500" aria-label="Redes sociais">
+      {SOCIALS.map((social) => (
+        <li
+          class="p-2 text-xs rounded hover:bg-white/5 transition duration-300 transform hover:-translate-y-1"
+          data-ccursor
+          key={social.name}
+        >
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="block hover:text-slate-200 transition duration-200"
+            aria-label={`${social.name} (abre em uma nova aba)`}
+          >
+            <span class="sr-only">{social.name}</span>
+            {<Component component={social.icon} />}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</header>
+
 
         <main id="content" class="pt-24 lg:w-1/2 lg:py-24 animate-slideInRight">
           <!-- SOBRE -->
-          <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Sobre mim">
-            <div class="mb-5 space-y-8 text-neutral-300">
-              <p class="transition-opacity duration-1000 delay-200 animate-fadeIn">
-                Desenvolvedor Frontend com experiência em criação de interfaces modernas, acessíveis e responsivas. Atuei em projetos que envolvem arquitetura de componentes, integração com APIs, sistemas completos e deploy em nuvem. Tenho domínio de ferramentas como React, TypeScript, Node.js, Tailwind CSS, MongoDB e Docker.
-              </p>
-              <p class="transition-opacity duration-1000 delay-300 animate-fadeIn">
-                Valorizo a qualidade do código, a performance da aplicação e a experiência do usuário. Também possuo conhecimentos em práticas DevOps, versionamento, deploy automatizado e segurança básica para web.
-              </p>
-            </div>
-          </section>
+         <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Sobre mim">
+  <div class="mb-5 space-y-8 text-neutral-300">
+    <p class="transition-opacity duration-1000 delay-200 animate-fadeIn">
+      Sou desenvolvedor Fullstack com foco em interfaces modernas, acessíveis e responsivas. Já atuei em projetos completos, desde o front-end até o back-end, com integração de APIs, arquitetura de componentes e deploy em nuvem.
+    </p>
+    <p class="transition-opacity duration-1000 delay-300 animate-fadeIn">
+      Tenho domínio de ferramentas como React, TypeScript, Node.js, Tailwind CSS, MongoDB e Docker. Prezo por qualidade de código, performance, experiência do usuário e aplico boas práticas como versionamento, deploy automatizado e segurança básica.
+    </p>
+  </div>
+</section>
+
 
           <!-- EXPERIÊNCIA -->
           <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Experiência de trabalho">
