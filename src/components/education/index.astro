@@ -1,0 +1,36 @@
+---
+const { education } = Astro.props;
+---
+
+<li class="group/list relative px-5 py-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 ease-in-out backdrop-blur-md shadow-sm border border-white/10 animate-fadeIn">
+  <!-- Ícone decorativo (em preto e branco) -->
+  <span class="absolute left-0 top-0 h-full w-1 bg-neutral-500 opacity-80 group-hover:opacity-100 transition duration-500"></span>
+
+  <!-- Exibindo o ícone da instituição ou curso -->
+  <div class="flex items-center gap-3 mb-2">
+    <img src={education.icon} alt="Ícone da instituição" class="w-6 h-6 object-contain filter grayscale" />
+    <h3 class="text-lg font-semibold text-neutral-100">
+      {education.course} – <span class="text-neutral-400">{education.institution}</span>
+    </h3>
+  </div>
+  
+  <p class="text-sm text-neutral-400">{education.period}</p>
+  <p class="mt-1 text-neutral-300 leading-relaxed">{education.description}</p>
+</li>
+
+<style scoped>
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+</style>

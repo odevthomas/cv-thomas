@@ -4,237 +4,172 @@ import Experience from "../components/experience/index.astro";
 import { EXPERIENCE } from "../data/experience";
 import { SOCIALS } from "../data/socials";
 import Layout from "../layouts/Layout.astro";
+
+import Skill from "../components/skills/index.astro";
+import { SKILLS } from "../data/skills";
 ---
 
 <Layout title=" Thomas Eduardo">
   <div class="relative hero z-10">
-    <div
-      class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0"
-    >
+    <div class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 animate-fadeIn">
       <div class="lg:flex lg:justify-between lg:gap-4">
-        <header
-          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
-        >
-         <div class="flex lg:items-start gap-4 flex-col lg:flex-row items-center text-center lg:text-left">
-  <img src="/logo.png" alt="Thomas Eduardo R Nascimento" class="w-16 h-16 rounded-full" />
-  <div>
-              <a
-                href="/"
-                class="text-4xl lg:text-5xl block font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"
-              >
-                <h1>Thomas E R. Nascimento</h1>
+        <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 animate-slideInLeft">
+          <div class="flex lg:items-start gap-4 flex-col lg:flex-row items-center text-center lg:text-left">
+            <img src="/logo.png" alt="Thomas Eduardo R Nascimento" class="w-16 h-16 rounded-full shadow-lg hover:scale-105 transition-transform duration-300" />
+            <div>
+              <a href="/" class="text-4xl lg:text-5xl block font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 animate-gradient">
+                <h1>Thomas Eduardo R Nascimento</h1>
               </a>
-              <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400">
-                Front-End Developer
-              </h2>
+              <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400 animate-fadeIn delay-200">Desenvolvedor Web</h2>
 
               <a
                 data-ccursor
                 href="mailto:developer.thomas@outlook.com.br"
-                class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4"
+                class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4 hover:bg-green-400/20"
               >
                 <span>Envie um e-mail</span>
-                <sapn
-                  class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-pulse"
-                >
-                </sapn>
+                <span class="w-2 h-2 rounded-full bg-green-400 duration-1000 animate-ping"></span>
               </a>
             </div>
           </div>
 
-          {
-            SOCIALS.length && (
-              <ul
-                class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5"
-                aria-label="Redes sociais"
-              >
-                {SOCIALS.map((social) => (
-                  <li class="text-xs p-2 rounded" data-ccursor>
-                    <a
-                      class="block hover:text-slate-200"
-                      href={social.url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label={`${social.name} (abre em uma nova aba)`}
-                    >
-                      <span class="sr-only">{social.name}</span>
-                      {<Component component={social.icon} />}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )
-          }
+          {SOCIALS.length && (
+            <ul class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5 animate-fadeIn delay-500" aria-label="Redes sociais">
+              {SOCIALS.map((social) => (
+                <li class="text-xs p-2 rounded hover:bg-white/5 transition duration-300 transform hover:-translate-y-1" data-ccursor>
+                  <a
+                    class="block hover:text-slate-200 transition duration-200"
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`${social.name} (abre em uma nova aba)`}
+                  >
+                    <span class="sr-only">{social.name}</span>
+                    {<Component component={social.icon} />}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </header>
 
-        <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
-          <section
-            id="about"
-            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-            aria-label="Sobre mim"
-          >
-            <div
-              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-            >
-              <h2
-                class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only"
-              >
-                Sobre
-              </h2>
-            </div>
-            <div>
-              <div class="mb-5 space-y-8">
-                <p>
-              Sou desenvolvedor Front-End. Trabalho com JavaScript, TypeScript e bibliotecas e frameworks principais. Meu sonho é melhorar meu código sempre, aplicando boas práticas como Código Limpo, reutilização de código e criando sistemas que possam crescer.
-
-                </p>
-
-                <p>
-               Mudei de carreira para desenvolvimento no início de 2023. Desde então,  atuo como freelancer, oferecendo serviços para pequenas empresas. Durante minha trajetória, estudei bastante tecnologias Front-End e, mais recentemente, conceitos de Backend, para trabalhar em equipes Full-Stack.
-                </p>
-                <p> 
-                  Tenho experiência com ferramentas de controle de versão como Git e SVN, identificando erros e integrando com metodologias ágeis, buscando sempre a qualidade do código e entregas eficientes.
-                </p>
-              </div>
+        <main id="content" class="pt-24 lg:w-1/2 lg:py-24 animate-slideInRight">
+          <!-- SOBRE -->
+          <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Sobre mim">
+            <div class="mb-5 space-y-8 text-neutral-300">
+              <p class="transition-opacity duration-1000 delay-200 animate-fadeIn">
+                Desenvolvedor Frontend com experiência em criação de interfaces modernas, acessíveis e responsivas. Atuei em projetos que envolvem arquitetura de componentes, integração com APIs, sistemas completos e deploy em nuvem. Tenho domínio de ferramentas como React, TypeScript, Node.js, Tailwind CSS, MongoDB e Docker.
+              </p>
+              <p class="transition-opacity duration-1000 delay-300 animate-fadeIn">
+                Valorizo a qualidade do código, a performance da aplicação e a experiência do usuário. Também possuo conhecimentos em práticas DevOps, versionamento, deploy automatizado e segurança básica para web.
+              </p>
             </div>
           </section>
-          
-          <section
-            id="experience"
-            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-            aria-label="Experiência de trabalho"
-          >
-            <div
-              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-            >
-              <h2
-                class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only"
-              >
-                Experiência
-              </h2>
-            </div>
+
+          <!-- EXPERIÊNCIA -->
+          <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Experiência de trabalho">
+            <h2 class="text-lg font-bold uppercase tracking-widest text-white mb-6">Experiência</h2>
             <div>
               <ol class="group/list space-y-12">
                 {EXPERIENCE.map((experience) => <Experience {...experience} />)}
               </ol>
-
-              <div class="mt-12">
-                <a
-                  data-ccursor
-                  class="inline-flex items-center leading-tight text-neutral-200 font-semibold group p-2 rounded px-3"
-                  aria-label="Ver o currículo completo"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="./resume.pdf"
-                >
-                  <span>
-                    <span
-                      class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                    >
-                      Ver Completo
-                    </span>
-                    <span class="whitespace-nowrap">
-                      <span
-                        class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                      >
-                        Currículo
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
-                        aria-hidden="true"
-                        ><path
-                          fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd"></path></svg
-                      ></span
-                    ></span
-                  ></a
-                >
-              </div>
             </div>
           </section>
-      <!-- Botão Flutuante do WhatsApp -->
-       <a href="https://wa.me/559999042072" target="_blank" class="whatsapp-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 258"><defs><linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stop-color="#1faf38"/><stop offset="100%" stop-color="#60d669"/></linearGradient><linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stop-color="#f9f9f9"/><stop offset="100%" stop-color="#fff"/></linearGradient></defs><path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/><path fill="url(#logosWhatsappIcon1)" d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/><path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/></svg>
-        </a>
 
-       <footer class="max-w-md pb-16 text-sm text-neutral-500 sm:pb-0 flex items-center justify-between">
-  <!-- Logo ao lado do texto -->
-  <img src="/favicon-dark.png" alt="Logo" class="h-8 w-auto mr-4" />
+     
 
-  <p class="flex items-center space-x-2">
-    <span>São Paulo |</span>
-    <a
-      href="https://www.figma.com/"
-      class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline"
-      target="_blank"
-      rel="noreferrer">Brasil</a
-    >
-    <span>| @devthm |</span>
-   
-</footer>
+          <!-- HABILIDADES -->
+          <section id="skills" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Habilidades">
+            <h2 class="text-lg font-bold uppercase tracking-widest text-white mb-6">Habilidades</h2>
+            <ul class="group/list space-y-4">
+              {SKILLS.map((skill) => <Skill skill={skill} />)}
+            </ul>
+          </section>
 
-
+          <!-- RODAPÉ FINAL -->
+          <footer class="max-w-md pb-16 text-sm text-neutral-500 sm:pb-0 flex items-center justify-between">
+            <img src="/favicon-preta.png" alt="Logo" class="h-8 w-auto mr-4 animate-fadeIn" />
+            <p class="flex items-center space-x-2">
+              <span>São Paulo |</span>
+              <a href="https://www.figma.com/" class="font-medium text-neutral-400 hover:text-red-300 focus-visible:text-red-300 hover:underline" target="_blank" rel="noreferrer">Brasil</a>
+              <span>| @odevthomas |</span>
+            </p>
+          </footer>
         </main>
       </div>
     </div>
   </div>
 
-  <footer class="text-center py-4 text-xs">
+  <footer class="text-center py-4 text-xs text-neutral-600 animate-fadeIn">
     {new Date().getFullYear()} Todos os direitos reservados.
   </footer>
-
-
 </Layout>
 
 <style scoped>
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .hero {
-    background-image: url(/pattern.svg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    overflow-y: visible;
-    overflow-x: clip;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-  /*
-  .hero {
-    animation: fadeIn 3s;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
   }
-   */
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-  /* Estilo do botão flutuante do WhatsApp */
-  .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    transition: all 0.3s ease;
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
   }
+  100% {
+    background-position: 100% 50%;
+  }
+}
 
-  .whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
 
-  .whatsapp-icon {
-    width: 36px;
-    height: 36px;
-    color: white;
-  }
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientFlow 5s ease infinite;
+}
+
+.hero {
+  background-image: url(/pattern.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow-y: visible;
+  overflow-x: clip;
+}
 </style>

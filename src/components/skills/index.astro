@@ -1,0 +1,35 @@
+---
+const { skill } = Astro.props;
+// skill.name (ex: "JavaScript")
+// skill.icon (ex: "/icons/javascript.svg")
+---
+
+<li class="group/list px-5 py-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 ease-in-out backdrop-blur-md border border-white/10 shadow-sm animate-fadeIn inline-block mr-4">
+  <div class="flex items-center gap-3">
+    <img src={skill.icon} alt={skill.name} class="w-6 h-6 object-contain" />
+    <span class="text-neutral-100 font-medium">{skill.name}</span>
+  </div>
+</li>
+
+<style scoped>
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Ajusta a exibição em linha para as habilidades */
+.group/list {
+  display: inline-block;
+  margin-right: 1rem; /* Ajuste do espaçamento entre os itens */
+}
+</style>
